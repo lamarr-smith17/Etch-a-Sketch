@@ -1,0 +1,1 @@
+This project will show my current knowledge of using JavaScript's DOM and CSS Grid & Flexbox.
