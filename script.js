@@ -1,11 +1,10 @@
 const gridContainer = document.getElementsByClassName("container");
 
-
 // Function that makes the rows
 function makeRows(rowNum)
 {
     for (let r = 0; r < rowNum; r++){
-        let gridRow = document.createElement('div');
+        let gridRow = document.createElement("div");
         gridContainer.appendChild(gridRow).className = "gridRow";
     };
 };
@@ -21,5 +20,8 @@ function makeCols (colNum)
     };
 };
 
-makeRows(16);
-makeCols(16);
+function sampleGrid(){
+    makeRows(16);
+    makeCols(16);
+};
+sampleGrid();
