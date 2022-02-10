@@ -2,20 +2,25 @@
     margin: 0;
     padding: 0;
 }
-
-.container {
+/* :root {
+  --rowNum: ;
+  --colNum: ;
+} */
+.main-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  background-color: #C6E2FF;
+}
+#grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     height: 500px;
     width: 500px;
-
 }
 
-#gridRow {
-  border: 1px solid red;
-}
 
 #gridCell {
-  border: 1px solid gray;
+  border: 1px solid black;
 }

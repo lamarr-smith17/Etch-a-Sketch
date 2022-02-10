@@ -1,20 +1,20 @@
-const gridContainer = document.getElementById("container");
-let gridRow =  document.getElementById("gridRow");
-// Function that makes the rows
-function makeGrid(rowNum,colNum)
-{
-    for (let r = 0; r < rowNum; r++){
-        let gridRow = document.createElement("div");
-        gridContainer.appendChild(gridRow).id = "gridRow";
+const gridContainer = document.getElementById("grid-container");
+const root = document.querySelector("root");
+let gridCell = document.getElementById("gridCell");
 
-        for (let c = 0; c < colNum; c++){
-            let gridCell = document.createElement("div");
-            gridContainer.appendChild(gridCell).id = "gridCell";
-        };
+console.log(gridContainer);
+console.log(gridCell);
+
+// Function that makes the grid
+function makeG(rowNum, colNum){
+    for (let i = 0; i < (rowNum * colNum); i++){
+        let gridCell = document.createElement('div');
+        gridCell.innerHTML = "" + i;
+        gridContainer.appendChild(gridCell).id = "gridCell";
     };
 };
 
-function sampleGrid(){
-    makeGrid(16,16);
-};
-sampleGrid();
+// gridCell.addEventListener("click", ()=>{
+//     gridCell.style.color = "#C6E2FF";
+// });
+makeG(16,16);
