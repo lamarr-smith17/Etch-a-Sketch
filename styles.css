@@ -3,20 +3,19 @@
     padding: 0;
 }
 
-.body {
-  height: auto;
-}
-
 .container {
     display: grid;
-    grid-gap: 1em;
-    
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    height: 500px;
+    width: 500px;
+
 }
 
-.gridRow {
-  border: 1px solid black;
+#gridRow {
+  border: 1px solid red;
 }
 
-.gridCol {
-  border: 2px solid black;
+#gridCell {
+  border: 1px solid gray;
 }
