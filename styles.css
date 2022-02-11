@@ -27,5 +27,6 @@
 }
 
 #gridCell:hover{
-  background-color: black;
+  background-color: gray;
 }
+
