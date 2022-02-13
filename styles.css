@@ -6,11 +6,18 @@
   --rowNum: ;
   --colNum: ;
 } */
+body{
+  background-color: #C6E2FF;
+
+}
+
+h1{
+  text-align: center;
+}
 .main-container {
   display: flex;
   justify-content: center;
   margin-top: 5%;
-  background-color: #C6E2FF;
 }
 #grid-container {
     display: grid;
@@ -22,11 +29,10 @@
 
 
 #gridCell {
-  border: 1px solid black;
+  border: 1px solid gray;
   transition: .2s;
 }
 
-#gridCell:hover{
-  background-color: gray;
+.colorChange {
+  background: black;
 }
-
