@@ -1,7 +1,7 @@
 const gridContainer = document.getElementById("grid-container");
 const root = document.querySelector("root");
 const clearGridBtn = document.querySelector("#clear-btn");
-
+const test = document.querySelector(".test");
 // Function that makes the grid
 function makeG(rowNum, colNum){
     for (let i = 0; i < (rowNum * colNum); i++){
@@ -18,17 +18,18 @@ function changeColor(gridCellSelector){
     })
 };
 
-
-let clear = document.querySelector('div');
-
 function clearGrid(){
-    let clearClass = document.querySelectorAll('div#gridCell');
-    console.log(clearClass);
-    if (clearClass == document.querySelectorAll('div.colorChange')){
-        console.log('hi');
+    let clearClass = document.querySelectorAll('.colorChange');
+    for (let i = 0; i < clearClass.length; i++){
+       clearClass[i].classList.remove('colorChange');
     }
-    // clear.classList.remove('colorChange');
+    gridPrompt();
 };
+function gridPrompt(){
+    let userRows = prompt("How many rows would you like in the grid?");
+    let userCols = prompt("How many columns would you like in the grid?");
+    test.innerHTML = userRows + "," + userCols;
+}
 clearGridBtn.addEventListener('click', clearGrid);
 
 makeG(16,16);
