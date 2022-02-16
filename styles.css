@@ -6,8 +6,10 @@
   --squareNum: 16;
 }
 body{
+  min-height: 100vh;
   background-color: #C6E2FF;
-
+  display: flex;
+  flex-direction: column;
 }
 
 h1{
@@ -16,6 +18,7 @@ h1{
 .main-container {
   display: flex;
   justify-content: center;
+  gap: 2em;
   margin-top: 5%;
 }
 #grid-container {
@@ -26,6 +29,10 @@ h1{
     width: 600px;
 }
 
+#clear-btn{
+  height: 50px;
+  width: 100px;
+}
 
 #gridCell {
   border: 1px solid gray;
@@ -34,4 +41,20 @@ h1{
 
 .colorChange {
   background: black;
+}
+footer {
+  background-color: #FCF5E5;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  gap: 1em;
+  margin-top: auto;
+}
+#myName {
+  text-align: center;
+  align-self: center;
+}
+#gitLink {
+  background-color: transparent;
+  border: none;
 }
