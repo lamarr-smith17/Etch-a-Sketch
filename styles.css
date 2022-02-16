@@ -2,10 +2,9 @@
     margin: 0;
     padding: 0;
 }
-/* :root {
-  --rowNum: ;
-  --colNum: ;
-} */
+:root {
+  --squareNum: 16;
+}
 body{
   background-color: #C6E2FF;
 
@@ -21,8 +20,8 @@ h1{
 }
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(var(--squareNum), 1fr);
+    grid-template-rows: repeat(var(--squareNum), 1fr);
     height: 600px;
     width: 600px;
 }

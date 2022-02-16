@@ -1,12 +1,16 @@
 const gridContainer = document.getElementById("grid-container");
-const root = document.querySelector("root");
 const clearGridBtn = document.querySelector("#clear-btn");
-const test = document.querySelector(".test");
+let squareNum = 16;
+let root = document.querySelector('#grid-container');
+console.log(root)
 // Function that makes the grid
-function makeG(rowNum, colNum){
-    for (let i = 0; i < (rowNum * colNum); i++){
+makeG(squareNum);
+
+function makeG(squareNum){
+    for (let i = 0; i < (squareNum * squareNum); i++){
         let gridCell = document.createElement('div');
-        gridContainer.appendChild(gridCell).id = "gridCell";   
+        gridContainer.appendChild(gridCell).id = "gridCell";
+        gridCell.innerHTML = i;   
     };
     let gridCellSelector = document.querySelectorAll("#gridCell"); // Selects all of the gridCell ID's and puts them into an array
     gridCellSelector.forEach(changeColor); // For each element that has the ID of gridCell, the changeColor function is applied
@@ -26,10 +30,12 @@ function clearGrid(){
     gridPrompt();
 };
 function gridPrompt(){
-    let userRows = prompt("How many rows would you like in the grid?");
-    let userCols = prompt("How many columns would you like in the grid?");
-    test.innerHTML = userRows + "," + userCols;
-}
+    squareNum = prompt("How big would you like to the grid to be? (Row x Column)");
+    while (squareNum >= 100){ // Validation loop
+        squareNum = prompt("The grid cannot be 100 x 100. Please enter a new value");
+    };
+    root.style.setProperty('--squareNum', squareNum);
+    makeG(squareNum);
+};
 clearGridBtn.addEventListener('click', clearGrid);
 
-makeG(16,16);
