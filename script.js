@@ -1,9 +1,8 @@
 const gridContainer = document.getElementById("grid-container");
 const clearGridBtn = document.querySelector("#clear-btn");
 let root = document.querySelector('#grid-container');
-let squareNum = 16;
 // Function that makes the grid
-makeG(squareNum);
+makeG(16);
 
 function makeG(squareNum){
     for (let i = 0; i < (squareNum * squareNum); i++){
@@ -30,14 +29,16 @@ function clearGrid(){
 };
 
 function gridPrompt(){
-    gridContainer.remove(gridCell); // Empties the grid space
+    let gridCell = document.querySelectorAll('#gridCell');
+    gridCell.forEach(gridCell => gridCell.remove()); // For each element that has the ID of gridCell, it is removed
     squareNum = prompt("How big would you like to the grid to be? (Row x Column)");
     while (squareNum >= 100){ // Validation loop
         squareNum = prompt("The grid cannot be 100 x 100. Please enter a new value");
     };
     root.style.setProperty('--squareNum', squareNum); /* Sets the property of squareNum to the user input 
-    which changes the CSS variables so the grid row and cols templates update*/  
-    makeG(root);
+    which changes the CSS variable so the grid row and cols templates update*/  
+    console.log(root);
+    makeG(squareNum);
 };
 
 clearGridBtn.addEventListener('click', clearGrid);
