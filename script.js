@@ -1,5 +1,7 @@
 const gridContainer = document.getElementById("grid-container");
 const clearGridBtn = document.querySelector("#clear-btn");
+const rainbowBtn = document.querySelector('#rainbow-btn');
+const blackBtn = document.querySelector('#black-btn');
 let root = document.querySelector('#grid-container');
 // Function that makes the grid
 
@@ -14,15 +16,17 @@ function makeG(squareNum){
 
 function changeColor(gridCellSelector){
     gridCellSelector.addEventListener('mouseover', (changeColor) =>{
+        gridCellSelector.style.backgroundColor = 'black';
         changeColor.target.classList.add("colorChange");
-    })
+    });
 };
+
 
 function clearGrid(){
     let clearClass = document.querySelectorAll('.colorChange');
     for (let i = 0; i < clearClass.length; i++){
        clearClass[i].classList.remove('colorChange');
-    }
+    };
     gridPrompt();
 };
 
@@ -40,4 +44,10 @@ function gridPrompt(){
 
 makeG(16); // Starting grid size
 clearGridBtn.addEventListener('click', clearGrid);
+rainbowBtn.addEventListener('click', changeColor);
+ blackBtn.addEventListener('click', ()=>{
+    console.log('i work');
+});
+
+
 

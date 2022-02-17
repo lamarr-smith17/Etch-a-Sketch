@@ -20,16 +20,24 @@ h1{
   justify-content: center;
   gap: 2em;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 #grid-container {
     display: grid;
+    background-color: #ffffff;
     grid-template-columns: repeat(var(--squareNum), 1fr);
     grid-template-rows: repeat(var(--squareNum), 1fr);  
     height: 600px;
     width: 600px;
 }
 
-#clear-btn{
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+}
+.btn{
   height: 50px;
   width: 100px;
 }
@@ -39,9 +47,6 @@ h1{
   transition: .2s;
 }
 
-.colorChange {
-  background: black;
-}
 footer {
   background-color: #FCF5E5;
   display: flex;
