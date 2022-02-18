@@ -1,10 +1,11 @@
+// Main variable declarations
 const gridContainer = document.getElementById("grid-container");
 const clearGridBtn = document.querySelector("#clear-btn");
 const rainbowBtn = document.querySelector('#rainbow-btn');
 const blackBtn = document.querySelector('#black-btn');
-let root = document.querySelector('#grid-container');
-// Function that makes the grid
+const root = document.querySelector('#grid-container');
 
+// Functions
 function makeG(squareNum){
     for (let i = 0; i < (squareNum * squareNum); i++){
         let gridCell = document.createElement('div');
@@ -21,6 +22,20 @@ function changeColor(gridCellSelector){
     });
 };
 
+function rainbowColors(gridCellSelector){
+    gridCellSelector.addEventListener('mouseover', (rainbowColors) =>{
+        let randomColor = Math.floor(Math.random()*16777215).toString(16); // Generates a random color each time
+        gridCellSelector.style.backgroundColor = '#' + randomColor;
+        rainbowColors.target.classList.add('colorChange');
+    });
+};
+
+function blackColor(gridCellSelector){
+    gridCellSelector.addEventListener('mouseover', (blackColor) =>{
+        gridCellSelector.style.backgroundColor = 'black';
+        blackColor.target.classList.add('colorChange');
+    });
+};
 
 function clearGrid(){
     let clearClass = document.querySelectorAll('.colorChange');
@@ -43,10 +58,24 @@ function gridPrompt(){
 };
 
 makeG(16); // Starting grid size
+// Button event listeners
 clearGridBtn.addEventListener('click', clearGrid);
-rainbowBtn.addEventListener('click', changeColor);
- blackBtn.addEventListener('click', ()=>{
-    console.log('i work');
+rainbowBtn.addEventListener('click', () =>{
+    let gridCellSelector = document.querySelectorAll("#gridCell");
+    gridCellSelector.forEach(rainbowColors);
+
+});
+rainbowBtn.addEventListener('mouseover', ()=>{
+    let randomColor = Math.floor(Math.random()*16777215).toString(16); // Generates a random color each time
+    rainbowBtn.style.backgroundColor = '#' + randomColor;
+});
+rainbowBtn.addEventListener('mouseout', ()=>{
+    rainbowBtn.style.backgroundColor = '#ea55ae';
+});
+
+blackBtn.addEventListener('click', ()=>{
+    let gridCellSelector = document.querySelectorAll("#gridCell");
+    gridCellSelector.forEach(blackColor);
 });
 
 

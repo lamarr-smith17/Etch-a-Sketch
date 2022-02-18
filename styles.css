@@ -1,6 +1,11 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
+}
+@font-face {
+  font-family: 'Shizuru';
+  src: url(./fonts/Shizuru-Regular.ttf);
 }
 :root {
   --squareNum: 16;
@@ -10,45 +15,69 @@ body{
   background-color: #C6E2FF;
   display: flex;
   flex-direction: column;
+  background-image: linear-gradient(#ea55ae,#fadb77);
 }
 
+/* Main Styles */
 h1{
   text-align: center;
+  font-family: 'Shizuru', sans-serif, Arial;
+  font-size: 50px;
 }
+
 .main-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 2em;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 2%;
+  
+
 }
+
 #grid-container {
     display: grid;
     background-color: #ffffff;
+    border: solid 3px #fadb77;
+    border-radius: 2;
     grid-template-columns: repeat(var(--squareNum), 1fr);
     grid-template-rows: repeat(var(--squareNum), 1fr);  
     height: 600px;
     width: 600px;
 }
 
-.button-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2em;
-}
-.btn{
-  height: 50px;
-  width: 100px;
-}
-
 #gridCell {
-  border: 1px solid gray;
+  border: 1px solid #000000;
   transition: .2s;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  order: 3;
+}
+
+.btn{
+  font-family: 'Shizuru', sans-serif, Arial;
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #ea55ae;
+  border: none;
+  border-radius: 10px;
+  transition: .2s;
+}
+
+.btn:hover{
+  transition: .2s;
+  transform: scale(1.4);
+}
+
+/* Footer Styles */
 footer {
-  background-color: #FCF5E5;
+  background-color: #ea564e00;
   display: flex;
   flex-shrink: 0;
   justify-content: center;
@@ -62,4 +91,9 @@ footer {
 #gitLink {
   background-color: transparent;
   border: none;
+}
+#footer-text {
+  text-align: center;
+  align-self: center;
+  font-weight: bold;
 }
